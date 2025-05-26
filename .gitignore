@@ -13,18 +13,3 @@
 .externalNativeBuild
 .cxx
 local.properties
-
-# Additional Android/NDK ignores
-*.so
-*.a
-/app/build/
-/app/.cxx/
-*.log
-
-# IDE files
-.vscode/
-*.swp
-*.swo
-
-# OS generated files
-Thumbs.db
