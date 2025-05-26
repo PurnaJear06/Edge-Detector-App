@@ -1,0 +1,61 @@
+🧠 Developer Notes for Cursor AI Usage
+
+🚫 AI Usage Guidelines
+To ensure originality and avoid AI-generated detection in public submissions:
+
+1. ✅ Do not paste raw AI-generated code.
+   Always refactor, rename variables, and structure logic manually.
+
+2. ✅ Use natural commit messages. 
+   Example:
+   - "Added OpenCV Canny edge logic in native layer"
+   - "Fixed JNI frame transfer bug"
+   - Avoid robotic commits like: "Implemented feature 1", "Code updated"
+
+3. ✅ Follow human typing patterns:
+   - Insert logging (Log.d) even if unused, to simulate debug process.
+   - Add TODOs and commented-out code blocks.
+   - Include trials/errors in Git history: e.g., wrong texture size, shader typos.
+
+4. ✅ Avoid perfect formatting.
+   - Don’t align every comment and indent uniformly.
+   - Add realistic inconsistencies, e.g., slightly different formatting styles in `.cpp` vs `.java`.
+
+5. ✅ Write README manually with real screenshots/GIFs and descriptions. Avoid overly technical AI phrases like “seamless integration.”
+
+6. ✅ Split development sessions.
+   Commit code in intervals over 2-3 days. Avoid full-project push at once.
+
+
+
+🧱 Project Architecture Recap (for Cursor Context)
+
+ ☕ Java/Kotlin
+- Camera setup using `Camera2` and `SurfaceTexture`
+- Frame send via JNI `nativeProcessFrame(byte[] data, int width, int height)`
+
+🔄 JNI Bridge
+- `extern "C"` functions to convert YUV/NV21 to Mat
+- OpenCV `Canny()` or grayscale processing
+- Return or directly update OpenGL buffer
+
+🎨 OpenGL Renderer
+- `Renderer.java`/`Renderer.cpp` using `OpenGL ES 2.0`
+- Accepts texture from native code
+- `glTexImage2D` updates with processed frame
+
+---
+
+✍️ Natural Coding Tips
+
+Variable Naming
+| DO (Human-like)    | DON'T (AI-ish)      |
+|--------------------|---------------------|
+| `tempFrame`, `imgMat` | `processed_image` |
+| `initGLContext()`  | `initialize_opengl_environment()` |
+| `isEdgeModeEnabled`| `toggle_edge_detection_flag` |
+
+Comments
+```cpp
+// TODO: Might optimize later with grayscale shader
+// Hmm: Not sure if GL buffer needs flipY

@@ -1,0 +1,6 @@
+@echo off
+echo Clearing logcat...
+adb logcat -c
+
+echo Running logcat with filters...
+adb logcat EdgeDetector:V EdgeDetectorDebug:V *:E | findstr /C:"EdgeDetector" /C:"OpenCV" /C:"edge-detector" /C:"UnsatisfiedLinkError" 
