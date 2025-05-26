@@ -64,20 +64,6 @@ A real-time edge detection application that captures camera frames, processes th
   </tr>
 </table>
 
-## 📷 Demo
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center"><b>Edge Detection Mode</b></td>
-      <td align="center"><b>Raw Camera Mode</b></td>
-    </tr>
-    <tr>
-      <td><img src="screenshots/edge_detection.jpg" alt="Edge Detection Mode" width="300px"/></td>
-      <td><img src="screenshots/raw_camera.jpg" alt="Raw Camera Mode" width="300px"/></td>
-    </tr>
-  </table>
-</div>
 
 ## ⚙️ Setup
 
